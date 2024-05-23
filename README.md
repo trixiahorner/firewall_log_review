@@ -60,4 +60,31 @@ There are also a lot of connections from 18.160.185.174 as well, so let's zoom i
 ```
 grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.185.174 | cut -d ' ' -f 1,3,4,5,7,8,9,10,11,12,13,14
 ```
-![IP1](https://github.com/trixiahorner/firewall_log_review/blob/main/images/F5.png?raw=true)
+![IP2](https://github.com/trixiahorner/firewall_log_review/blob/main/images/F5.png?raw=true)
+<br>
+I see a pattern with the bytes field.
+<br>
+<br>
+
+### 5. Let's concentrate on just that field
+```
+grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.185.174 | cut -d ' ' -f 14
+```
+![byte](https://github.com/trixiahorner/firewall_log_review/blob/main/images/F6.png?raw=true)
+<br>
+<br>
+
+### 6. Let's run those bytes through a mathematical formula
+This command asks for the minimum/maximum, the mean, the standard deviation, and the variance.
+```
+grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.185.174 | cut -d ' ' -f 8,14 | tr : ' ' | tr / ' '  | cut -d ' ' -f 4 | Rscript -e 'y <-scan("stdin", quiet=TRUE)' -e 'cat(min(y), max(y), mean(y), sd(y), var(y), sep="\n")'
+```
+![math](https://github.com/trixiahorner/firewall_log_review/blob/main/images/F7.png?raw=true)
+<br>
+- Minimum: 1816
+- Maximum: 1848
+- Mean: 1829.805
+- SD: 12.20163
+- Variance: 151.33
+  
+
