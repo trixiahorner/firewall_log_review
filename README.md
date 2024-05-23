@@ -4,6 +4,7 @@ The purpose of this lab is to understand how to go through and parse log files. 
 ## Environment and setup
 This lab is part of the Antisyphon Training SOC Core Skills course with John Strand. Visit [Antisyphon](https://www.antisyphontraining.com/) for more information.
 <br>
+<br>
 Before reviewing the logs, cd into the correct directory. And we need to do some installing (r-base-core for some mathematical computations and data analysis.)
 ```
 cd /mnt/c/IntroLabs
