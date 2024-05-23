@@ -87,10 +87,18 @@ grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.
 - SD: 12.20163
 - Variance: 151.33
 <br>
+This is a beacon! This regularity in the intervals, with minimal deviation, is a strong indicator of a beacon, which is often used by malware for periodic communication with a C2 server.
 <br>
 
-### 7. Explanation
-This is a beacon. The narrow range between minimum and maximum intervals, combined with a low standard deviation and variance, indicates consistent and predictable intervals. This regularity is characteristic of beaconing behavior, where a compromised system frequently "checks in" with a C2 server at nearly fixed intervals. This pattern is a strong indicator of a beacon, commonly used by malware for periodic communication with a C2 server.
+# Conclusion
+The identification of beaconing behavior through log analysis exemplifies the importance of these skills. The narrow range between minimum and maximum intervals, coupled with low standard deviation and variance, points to consistent and predictable intervals. This regularity is a hallmark of beaconing, where a compromised system frequently "checks in" with a C2 server at nearly fixed intervals. Recognizing this pattern is a critical indicator of a beacon, often used by malware for periodic communication with a C2 server. Through effective log parsing, you can detect such malicious activities and enhance your cybersecurity defenses.
+
+
+
+
+
+
+
 
 
 
