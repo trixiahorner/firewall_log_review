@@ -86,5 +86,18 @@ grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.
 - Mean: 1829.805
 - SD: 12.20163
 - Variance: 151.33
+<br>
+<br>
+
+### 7. Explanation
+This is a beacon. The narrow range between minimum and maximum intervals, combined with a low standard deviation and variance, indicates consistent and predictable intervals. This regularity is characteristic of beaconing behavior, where a compromised system frequently "checks in" with a C2 server at nearly fixed intervals. This pattern is a strong indicator of a beacon, commonly used by malware for periodic communication with a C2 server.
+
+
+
+
+
+
+
+
   
 
